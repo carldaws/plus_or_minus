@@ -1,6 +1,6 @@
 # PlusOrMinus
 
-**PlusOrMinus** is a simple Ruby gem that extends `Time`, `DateTime`, and `Numeric` with convenient range methods for adding and subtracting values.
+**PlusOrMinus** is a simple Ruby gem that extends `Time`, `DateTime`, `Date` and `Numeric` with convenient range methods for adding and subtracting values.
 
 ## Installation
 

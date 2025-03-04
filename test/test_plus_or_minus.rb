@@ -1,5 +1,5 @@
-require "minitest/autorun"
-require_relative "../lib/plus_or_minus"
+require 'minitest/autorun'
+require_relative '../lib/plus_or_minus'
 
 class PlusOrMinusTest < Minitest::Test
   using PlusOrMinus
