@@ -2,8 +2,6 @@ require 'minitest/autorun'
 require_relative '../lib/plus_or_minus'
 
 class PlusOrMinusTest < Minitest::Test
-  using PlusOrMinus
-
   def setup
     @time = Time.new(2025, 1, 1, 12, 0, 0)
     @num = 100
