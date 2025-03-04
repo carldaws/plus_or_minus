@@ -53,6 +53,7 @@ Order.where(due_date: Date.today.plus_upto(2.weeks))
 
 # Fetch logs recorded within 5 minutes of a specific timestamp
 Log.where(timestamp: some_time.plus_or_minus(5.minutes))
+```
 
 ## License
 
