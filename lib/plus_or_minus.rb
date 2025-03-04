@@ -1,12 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "plus_or_minus/version"
-require "date"
+require_relative 'plus_or_minus/version'
+require 'date'
 
 module PlusOrMinus
-  class Error < StandardError; end
-
-  module InstanceMethods
+  module CoreExt
     def plus_or_minus(span)
       (self - span)..(self + span)
     end
@@ -19,16 +17,20 @@ module PlusOrMinus
       (self - span)..self
     end
   end
+end
 
-  refine Time do
-    import_methods InstanceMethods
-  end
+class Time
+  include PlusOrMinus::CoreExt
+end
 
-  refine DateTime do
-    import_methods InstanceMethods
-  end
+class DateTime
+  include PlusOrMinus::CoreExt
+end
 
-  refine Numeric do
-    import_methods InstanceMethods
-  end
+class Date
+  include PlusOrMinus::CoreExt
+end
+
+class Numeric
+  include PlusOrMinus::CoreExt
 end

@@ -16,11 +16,8 @@ Or, install it manually with `gem install plus_or_minus`
 
 ## Usage
 
-To use PlusOrMinus, you need to enable the refinements within your scope:
-
 ```ruby
 require "plus_or_minus"
-using PlusOrMinus
 
 # Numeric
 5.plus_or_minus(2) # => (3..7)
@@ -45,8 +42,6 @@ date.minus_upto(3) # => (date - 3.days)..date
 If you're using Rails, PlusOrMinus works beautifully with ActiveRecord queries and Rails' time helpers:
 
 ```ruby
-using PlusOrMinus
-
 # Fetch users created within the last hour
 User.where(created_at: Time.current.minus_upto(1.hour))
 
@@ -58,14 +53,6 @@ Order.where(due_date: Date.today.plus_upto(2.weeks))
 
 # Fetch logs recorded within 5 minutes of a specific timestamp
 Log.where(timestamp: some_time.plus_or_minus(5.minutes))
-
-# With Paranoia or similar:
-Model.where(deleted_at: parent.deleted_at.plus_or_minus(1.minute))
-```
-
-## Refinements
-
-This gem uses refinements to extend Time, DateTime, and Numeric. To use it in a file, you must explicitly enable refinements with `using PlusOrMinus`.
 
 ## License
 
